@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tripple – match</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #c3e6fa;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      color: #a87436;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-size: 3.2em;
+    }
+
+    .legend-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    .legend {
+      background: #fffbe8;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px #0001;
+      padding: 12px 16px;
+      text-align: center;
+      max-width: 600px;
+      font-size: 0.8em;
+    }
+
+    .legend h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.2em;
+      color: #a87436;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .legend > div {
+      font-size: 1.4em;
+      line-height: 1.4;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px 24px;
+    }
+
+    .board {
+      background: #a87436;
+      border-radius: 32px;
+      box-shadow: 0 8px 24px #0002;
+      margin: 8px auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 6px;
+      width: 90vw;
+      max-width: 600px;
+      aspect-ratio: 6 / 5;
+    }
+
+    .cell {
+      background: #fffbe8;
+      border-radius: 12px;
+      box-shadow: inset 0 0 4px #0001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8em;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .cell.generator {
+      background: #fff2c7;
+      border: 2px solid gold;
+    }
+
+    .selected {
+      outline: 3px solid #009688;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tripple – match</h1>
+
+  <div class="legend-wrapper">
+    <div class="legend">
+      <h2>Legenda spojování:</h2>
+      <div>
+        <div>🌱 + 🌱 → 🌿</div><div>🌿 + 🌿 → 🌳</div>
+        <div>🌳 + 🌳 → 🏡</div><div>🏡 + 🏡 → 🏠</div>
+        <div>🏠 + 🏠 → 🏛️</div><div>🏛️ + 🏛️ → 🏯</div>
+        <div>🏯 + 🏯 → 🏢</div><div>🏢 + 🏢 → 🏙️</div>
+        <div>🏙️ + 🏙️ → 👑</div><div>👑 + 👑 → ✨</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <script>
+    const board = document.getElementById('board');
+    const ROWS = 5;
+    const COLS = 6;
+    const TOTAL_CELLS = ROWS * COLS;
+    const LEVELS = ['🌱', '🌿', '🌳', '🏡', '🏠', '🏛️', '🏯', '🏢', '🏙️', '👑', '✨'];
+
+    let cells = [];
+    let selectedIndex = null;
+
+    for (let i = 0; i < TOTAL_CELLS; i++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+
+      cell.addEventListener('click', () => handleCellClick(i));
+
+      board.appendChild(cell);
+      cells.push(cell);
+    }
+
+    function handleCellClick(index) {
+      const cell = cells[index];
+
+      if (index === generatorIndex) return;
+
+      if (selectedIndex === null) {
+        if (cell.textContent !== '') {
+          selectedIndex = index;
+          cell.classList.add('selected');
+        }
+      } else if (selectedIndex === index) {
+        cell.classList.remove('selected');
+        selectedIndex = null;
+      } else {
+        const from = cells[selectedIndex];
+        const to = cell;
+
+        if (from.textContent === to.textContent && from.textContent !== '') {
+          const levelIndex = LEVELS.indexOf(from.textContent);
+          if (levelIndex !== -1 && levelIndex + 1 < LEVELS.length) {
+            to.textContent = LEVELS[levelIndex + 1];
+            from.textContent = '';
+          }
+        }
+
+        from.classList.remove('selected');
+        selectedIndex = null;
+      }
+    }
+
+    // Generátor
+    const generatorIndex = Math.floor(Math.random() * TOTAL_CELLS);
+    const generatorCell = cells[generatorIndex];
+    generatorCell.classList.add('generator');
+    generatorCell.textContent = '🪙';
+
+    generatorCell.addEventListener('click', () => {
+      const freeCells = cells.filter((c, i) => c.textContent === '' && i !== generatorIndex);
+      if (freeCells.length === 0) return;
+      const randomCell = freeCells[Math.floor(Math.random() * freeCells.length)];
+      randomCell.textContent = '🌱';
+    });
+  </script>
+</body>
+</html>
