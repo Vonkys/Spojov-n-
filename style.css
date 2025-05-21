@@ -1,100 +1,110 @@
-html, body {
-  height: 100%;
+body {
+  background: #bbe6fb;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: #c7eafd;
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
 }
 
 .main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2vw; /* malá mezera */
   box-sizing: border-box;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
 }
 
-.square.legend {
-  width: 94vw;
-  max-width: 580px;
-  margin: 4vw auto 2vw auto;
-  background: #fffbe7;
-  border-radius: 2.5vw;
-  box-shadow: 0 5px 24px #b3d2e6bb;
+/* Společné pro oba panely */
+.square {
+  flex: 0 0 auto;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3vw 4vw;
+  box-sizing: border-box;
+  border-radius: 2vw;
+  box-shadow: 0 4px 32px #0001;
 }
 
+/* Legenda zůstává jako byla */
+.square.legend {
+  width: 92vw;
+  max-width: 560px;
+  min-height: 32vw;
+  background: #fffbe6;
+  height: 38vw;
+  max-height: 46vw;
+  min-width: 32vw;
+  margin-bottom: 2vw;
+}
+
+/* Herní plocha opravdu OBR široká a vysoká! */
+.square.board {
+  width: 99vw;
+  max-width: 99vw;
+  min-width: 60vw;
+  min-height: 55vw;
+  height: 68vw;
+  max-height: 99vw;
+  background: #a87436;
+  margin-bottom: 3vw;
+}
+
+/* Obsah legendy */
 .legend-content {
-  width: 100%;
+  width: 95%;
   text-align: center;
 }
-
 .legend-content h2 {
   font-family: 'Pacifico', cursive;
   color: #a87436;
   font-size: 7vw;
   margin: 0 0 2vw 0;
 }
-
 .legend-table {
-  font-size: 4.9vw;
+  font-size: 5vw;
   margin: 0 auto;
 }
 
-.square.board {
-  flex: 1 1 auto;
-  width: 98vw;
-  max-width: 1000px;
-  margin: 0 auto 3vw auto;
-  background: #a87c3f;
-  border-radius: 2vw;
-  box-shadow: 0 5px 24px #b3d2e6bb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 180px;
-  /* Klíčové: zabírá celý zbytek stránky */
-  height: 100%;
-}
-
+/* Obsah herní plochy */
 .board-content {
-  width: 100%;
-  text-align: center;
-  font-size: 2.3rem;
+  font-size: 2.6rem;
   color: #443011;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+  width: 100%;
 }
 
 @media (min-width: 700px) {
+  .main-container {
+    gap: 2vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
   .square.legend {
     width: 540px;
     max-width: 580px;
-    padding: 32px 36px;
-    border-radius: 32px;
+    min-width: 340px;
+    height: 190px;
+    max-height: 250px;
+    margin-bottom: 32px;
   }
   .legend-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
   .legend-table {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
   .square.board {
-    width: 700px;
+    width: 98vw;
     max-width: 900px;
+    min-width: 500px;
+    height: 480px;
+    max-height: 680px;
     min-height: 340px;
-    border-radius: 32px;
-    font-size: 2.3rem;
   }
   .board-content {
     font-size: 2rem;
