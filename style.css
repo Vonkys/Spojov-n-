@@ -13,7 +13,7 @@ h1 {
   color: #a87436;
   margin-top: 24px;
   margin-bottom: 10px;
-  font-size: 2.2em;
+  font-size: 3.2em;
   letter-spacing: 2px;
   font-weight: normal;
 }
@@ -24,6 +24,7 @@ h1 {
   border-radius: 24px;
   box-shadow: 0 8px 24px #0001;
   max-width: 480px;
+  height: 50vh;
   margin: 0 auto 32px auto;
   padding: 24px 16px;
   text-align: center;
@@ -46,7 +47,7 @@ h1 {
   margin: 0 auto;
   /* Opravdu velký obdélník */
   width: 94vw;
-  height: 98vh;
+  height: 100vh;
   max-width: 99vw;
   max-height: 68vh;
   display: flex;
