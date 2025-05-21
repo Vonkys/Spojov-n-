@@ -17,7 +17,7 @@ body {
 
 .hlavni-nadpis {
   font-family: 'Caveat', cursive, sans-serif;
-  font-size: 10vw;
+  font-size: 14vw;   /* ještě větší nadpis */
   text-align: center;
   color: #996633;
   margin-bottom: 2vw;
@@ -27,7 +27,7 @@ body {
 }
 @media (min-width: 700px) {
   .hlavni-nadpis {
-    font-size: 3.2rem;
+    font-size: 4.5rem;
     margin-bottom: 20px;
     margin-top: 32px;
   }
@@ -66,11 +66,11 @@ body {
 
 .herni {
   background: #a87c3f;
-  min-height: 48vw;
+  min-height: 70vw;     /* zvětšeno! */
   min-width: 94vw;
   max-width: 94vw;
-  max-height: 64vw;
-  font-size: 2.6rem;
+  max-height: 85vw;
+  font-size: 2.8rem;
   color: #443011;
   display: flex;
   justify-content: center;
@@ -94,10 +94,10 @@ body {
     font-size: 1.7rem;
   }
   .herni {
-    min-height: 340px;
+    min-height: 470px;   /* zvětšeno! */
     min-width: 550px;
     max-width: 550px;
-    max-height: 480px;
+    max-height: 520px;
     font-size: 2.7rem;
   }
 }
