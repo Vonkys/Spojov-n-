@@ -57,7 +57,7 @@ h1 {
   color: #4a3c23;
   border-radius: 32px;
   box-shadow: 0 8px 24px #0002;
-  margin: 24px auto;
+  margin: 96px auto; /* 4× větší mezera mezi legendou a herní plochou */
   padding: 24px;
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 sloupců */
