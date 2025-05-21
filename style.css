@@ -17,7 +17,7 @@ body {
 
 .hlavni-nadpis {
   font-family: 'Caveat', cursive, sans-serif;
-  font-size: 14vw;   /* ještě větší nadpis */
+  font-size: 14vw;
   text-align: center;
   color: #996633;
   margin-bottom: 2vw;
@@ -66,22 +66,23 @@ body {
 
 .herni {
   background: #a87c3f;
-  min-height: 70vw;     /* zvětšeno! */
-  min-width: 94vw;
-  max-width: 94vw;
-  max-height: 85vw;
+  min-height: 90vw;
+  min-width: 90vw;
+  max-width: 95vw;
+  max-height: 95vw;
   font-size: 2.8rem;
   color: #443011;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4vw;
 }
 
 @media (min-width: 700px) {
   .panel {
     border-radius: 32px;
-    max-width: 550px;
-    width: 550px;
+    max-width: 700px;
+    width: 700px;
   }
   .legenda {
     padding: 32px 36px;
@@ -94,10 +95,10 @@ body {
     font-size: 1.7rem;
   }
   .herni {
-    min-height: 470px;   /* zvětšeno! */
-    min-width: 550px;
-    max-width: 550px;
-    max-height: 520px;
+    min-height: 600px;
+    min-width: 600px;
+    max-width: 700px;
+    max-height: 650px;
     font-size: 2.7rem;
   }
 }
