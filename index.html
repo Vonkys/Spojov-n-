@@ -1,42 +1,21 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <title>Spojování</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
-  <!-- Legenda -->
-  <div class="legend-wrapper">
-    <div class="legend">
-      <b>Legenda spojování:</b><br>
-      🌱 + 🌱 → 🌿<br>
-      🌿 + 🌿 → 🌳<br>
-      🌳 + 🌳 → 🏡<br>
-      🏡 + 🏡 → 🏠<br>
-      🏠 + 🏠 → 🏛️<br>
-      🏛️ + 🏛️ → 🏯<br>
-      🏯 + 🏯 → 🏢<br>
-      🏢 + 🏢 → 🏙️<br>
-      🏙️ + 🏙️ → 👑<br>
+  <div class="container">
+    <div class="square legend">
+      <!-- Tady je tvá legenda, můžeš libovolně změnit -->
+      <div class="legend-title">Legenda spojování:</div>
+      <div class="legend-content">
+        🌱+🌱→🌿<br>
+        🌿+🌿→🌳<br>
+        🌳+🌳→🏠<br>
+        🏠+🏠→🏛️<br>
+        ...<br>
+      </div>
     </div>
-  </div>
-  
-  <!-- Herní čtverec -->
-  <div class="game-wrapper">
-    <div class="board-frame">
-      <div class="board">
-        <!-- Ukázkové rozložení, uprav podle logiky -->
-        <div>🌱</div><div>🌱</div><div>🌳</div><div>🏡</div><div>🌿</div><div>🌿</div><div>🌳</div>
-        <div>🏡</div><div>🌳</div><div>🏠</div><div>🌿</div><div>🏯</div><div>🌱</div><div>🏙️</div>
-        <div>🌿</div><div>🌿</div><div>🏛️</div><div>🌳</div><div>🌳</div><div>🏡</div><div>🏢</div>
-        <div>🏯</div><div>🌳</div><div>🏠</div><div>🌱</div><div>🌳</div><div>🏡</div><div>🌱</div>
-        <div>🏢</div><div>🌿</div><div>🏡</div><div>🏠</div><div>🏢</div><div>🏠</div><div>🌳</div>
-        <div>🌱</div><div>🏛️</div><div>🌳</div><div>🏡</div><div>🌳</div><div>🌳</div><div>🏯</div>
-        <div>🏙️</div><div>🏠</div><div>🌱</div><div>🏯</div><div>🏢</div><div>🌿</div><div>🌱</div>
+    <div class="square board">
+      <!-- Tady bude tvá herní mřížka nebo obsah -->
+      <div class="board-content">
+        <!-- Tady si vkládej hrací pole -->
       </div>
     </div>
   </div>
 </body>
-</html>
