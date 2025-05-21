@@ -12,7 +12,7 @@ h1 {
   font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
   color: #a87436;
   margin-top: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 48px; /* větší mezera pod nadpisem */
   font-size: 3.2em;
   letter-spacing: 2px;
   font-weight: normal;
@@ -57,7 +57,7 @@ h1 {
   color: #4a3c23;
   border-radius: 32px;
   box-shadow: 0 8px 24px #0002;
-  margin: 96px auto; /* 4× větší mezera mezi legendou a herní plochou */
+  margin: 192px auto; /* ještě větší mezera pod legendou */
   padding: 24px;
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 sloupců */
