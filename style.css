@@ -1,141 +1,119 @@
 body {
   margin: 0;
-  background: #b7e2fa;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  padding: 0;
+  background: #b8e6fc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* scroll bar fix on mobile */
   overflow-x: hidden;
 }
 
+/* Legenda - větší, zarovnaná nahoru */
 .legend {
-  width: 100vw;
-  max-width: 330px;
-  margin: 1.3em auto 0.9em auto;
-  font-family: "Segoe UI Emoji", "Arial", sans-serif;
-  font-size: clamp(0.93em, 3vw, 1.11em);
-  background: #fffbe5;
+  background: #fffbe6;
   border-radius: 18px;
-  box-shadow: 0 2px 12px #0001;
-  padding: 13px 13px 11px 15px;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+  padding: 2vw 4vw;
+  font-size: 6vw;
+  box-shadow: 0 3px 20px #0002;
+  width: 95vw;
+  max-width: 500px;
   text-align: left;
-  color: #865c22;
-  line-height: 1.44;
-}
-.legend b {
-  font-size: 1.15em;
-  color: #a06a2c;
-  display: block;
-  margin-bottom: 7px;
-  text-align: left;
-}
-.legend .emoji {
-  font-size: clamp(1.38rem, 4vw, 1.97rem);
-  vertical-align: middle;
-  margin: 0 1px;
+  color: #a4752a;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  font-weight: bold;
 }
 
+.legend b {
+  font-size: 7vw;
+  display: block;
+  margin-bottom: 2vw;
+}
+
+/* Herní čtverec - na mobilu do krajů, vždy čtvercový */
 .game-wrapper {
-  position: fixed;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  z-index: 1;
-  width: 100vw;
-  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: end;
-  pointer-events: none;
+  flex: 1 1 auto;
+  width: 100vw;
+  height: calc(100vh - 40vw); /* zbytek stránky pod legendou */
 }
 
 .board-frame {
-  background: #a8773d;
-  border-radius: 24px;
-  box-shadow: 0 6px 36px #98722a44, 0 2px 16px #83692e10;
-  padding: min(4vw, 17px);
-  margin: 0 auto;
-  display: inline-block;
-  pointer-events: auto;
+  background: #a4752a;
+  border-radius: 28px;
+  box-shadow: 0 7px 35px #0002, 0 0 0 10px #b99056 inset;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92vw;
+  height: 92vw;
+  max-width: 560px;
+  max-height: 560px;
 }
 
 .board {
+  background: #fff;
+  border-radius: 18px;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  gap: min(1vw, 6px);
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 0 0 3px #d9c6a288;
-  overflow: hidden;
-  width: min(97vw, 97vh, 520px);
-  height: min(97vw, 97vh, 520px);
-  margin: 0 auto;
+  gap: 0.7vw;
+  box-shadow: 0 2px 12px #0001 inset;
 }
 
 .tile {
-  background: #fff;
-  border-radius: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: clamp(1.5rem, 7vw, 2.65rem);
-  box-shadow: 0 1px 8px #0001;
+  align-items: center;
+  font-size: 7vw;
+  font-weight: normal;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px #0001;
   transition: background 0.2s;
-  user-select: none;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Pozadí podle typu - doplňuj JS nebo třídy */
 }
 
-.tile.plant   { background: #e8ffe3; }
-.tile.flower  { background: #ffe7f3; }
-.tile.tree    { background: #e6ffe8; }
-.tile.house   { background: #fff4dc; }
-.tile.lock    { background: #ffe98b; }
-.tile.empty   { background: #fff;   }
+/* Barvy podle typu dlaždice */
+.tile.flower    { background: #ffe3ef; }
+.tile.tree      { background: #d8ffd9; }
+.tile.house     { background: #fff8df; }
+.tile.lock      { background: #ffe490; }
+.tile.sprout    { background: #e7ffe6; }
 
-.tile.locked .lock-emoji {
+/* Emoji lock poloprůhledný přes obrázek */
+.tile.lock {
+  position: relative;
+  z-index: 1;
+}
+.tile.lock::after {
+  content: "🔒";
+  font-size: 6vw;
+  color: #ffbb00cc;
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%,-50%);
-  font-size: 2.1em;
-  color: #e7a810bb;
-  opacity: 0.7;
+  z-index: 2;
   pointer-events: none;
-  z-index: 1;
-  text-shadow: 0 2px 8px #fff9, 0 1px 4px #a8773d38;
-}
-.tile.locked .tile-emoji {
-  opacity: 0.53;
-  filter: grayscale(0.1) brightness(1.10);
+  filter: drop-shadow(0 2px 4px #fff6);
+  opacity: 0.7;
 }
 
-/* Odsazení pro horní legendu na mobilu */
-@media (max-width: 599px) {
-  .legend {
-    margin-top: 0.45em;
-    margin-bottom: 0.60em;
-    max-width: 97vw;
-    font-size: 1em;
-  }
-  .board {
-    width: 97vw;
-    height: 97vw;
-    max-width: 97vw;
-    max-height: 97vw;
-  }
-  .board-frame {
-    padding: min(2.8vw, 9px);
-  }
-}
-
+/* Responsivní úpravy */
 @media (min-width: 600px) {
-  .legend {
-    margin-top: 1.2em;
-    margin-bottom: 0.9em;
-    font-size: 1.07em;
-  }
-  .board {
-    width: min(520px, 67vw);
-    height: min(520px, 67vw);
-  }
-  .board-frame {
-    padding: 18px;
-  }
+  .legend { font-size: 24px; width: 480px; }
+  .legend b { font-size: 32px; }
+  .board-frame { width: 480px; height: 480px; }
+  .board { font-size: 2.7em; }
+  .tile { font-size: 2.7em; }
+  .tile.lock::after { font-size: 2.2em; }
 }
