@@ -61,11 +61,11 @@
       padding: 24px;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: repeat(12, 1fr); /* 12 řádků */
       gap: 6px;
       width: 90vw;
       max-width: 600px;
-      aspect-ratio: 6 / 5;
+      aspect-ratio: 6 / 12;
     }
 
     .cell {
@@ -75,7 +75,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.8em;
+      font-size: 2.6em;
       transition: 0.2s;
       cursor: pointer;
     }
@@ -110,7 +110,7 @@
 
   <script>
     const board = document.getElementById('board');
-    const ROWS = 5;
+    const ROWS = 12;
     const COLS = 6;
     const TOTAL_CELLS = ROWS * COLS;
     const LEVELS = ['🌱', '🌿', '🌳', '🏡', '🏠', '🏛️', '🏯', '🏢', '🏙️', '👑', '✨'];
@@ -121,9 +121,7 @@
     for (let i = 0; i < TOTAL_CELLS; i++) {
       const cell = document.createElement('div');
       cell.classList.add('cell');
-
       cell.addEventListener('click', () => handleCellClick(i));
-
       board.appendChild(cell);
       cells.push(cell);
     }
