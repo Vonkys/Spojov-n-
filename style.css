@@ -1,86 +1,95 @@
 body {
-  background: #c3e6fa;
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 0;
+  background: #c3e6fa;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Nadpis */
-.main-title {
+h1 {
   text-align: center;
-  font-size: 2.6em;
-  margin-top: 2vw;
+  font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
   color: #a87436;
-  font-family: 'Brush Script MT', cursive, 'Segoe Script', sans-serif;
-  letter-spacing: 0.04em;
-  margin-bottom: 1vw;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  font-weight: normal;
 }
 
-.square {
-  border-radius: 2em;
-  box-shadow: 0 8px 24px #0001;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 3vw;
-  justify-content: center;
+  width: 100vw;
 }
 
-.legend {
-  background: #fcf8e3;
-  width: 85vw;
-  max-width: 550px;
-  padding: 2vw 0 2vw 0;
-  margin-bottom: 3vw;
+/* Legenda */
+.square.legend {
+  background: #fdf7e6;
+  border-radius: 24px;
+  padding: 24px 32px;
+  box-shadow: 0 4px 16px #0002;
+  margin-bottom: 28px;
+  margin-top: 0;
+  min-width: 320px;
+  max-width: 98vw;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.legend-title {
-  font-size: 2em;
-  font-family: 'Brush Script MT', cursive, 'Segoe Script', sans-serif;
+.square.legend h2 {
+  font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
   color: #a87436;
-  margin-bottom: 1vw;
-  text-align: center;
+  font-size: 1.6em;
+  margin: 0 0 18px 0;
 }
 
-.legend-list {
-  font-size: 1.7em;
-  line-height: 1.5em;
-  text-align: center;
+.legend-table {
+  font-size: 2.1em;
 }
 
-/* Hnědý herní panel */
+/* Herní plocha - hnědý čtverec/obdélník */
 .square.board {
   background: #a87436;
   color: #423212;
-  width: 98vw;
+  border-radius: 28px;
+  width: 99vw;
   max-width: 99vw;
-  min-width: 60vw;
-  height: 100vw;      /* Vysoký jako je šířka viewportu */
-  max-height: 180vw;  /* když je hodně široko */
-  min-height: 70vw;
-  font-size: 2em;
+  min-width: 70vw;
+  height: 200vw;      /* Extra vysoký na mobilu */
+  max-height: 300vw;
+  min-height: 90vw;
+  font-size: 2.8em;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 16px #0002;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  transition: width 0.2s, height 0.2s;
 }
 
-.board-text {
-  font-size: 2em;
-  color: #423212;
-}
-
+/* Pro větší displeje (tablety, PC) trochu menší hnědý čtverec */
 @media (min-width: 600px) {
-  .square.legend {
-    width: 450px;
-    max-width: 600px;
-  }
   .square.board {
-    width: 600px;
-    height: 600px;
+    width: 650px;
+    height: 650px;
+    min-width: 400px;
     min-height: 400px;
-    max-height: 85vh;
+    font-size: 3em;
   }
+  .square.legend {
+    max-width: 600px;
+    width: 540px;
+  }
+}
+
+/* Zajistí správné zarovnání obsahu */
+.square.board > * {
+  margin: auto;
+  text-align: center;
 }
