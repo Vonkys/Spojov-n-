@@ -1,36 +1,30 @@
 body {
   margin: 0;
   padding: 0;
-  background: #bce6fa;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
-  min-height: 100vh;
-  box-sizing: border-box;
+  background: #bae5fa;
+  font-family: Arial, sans-serif;
 }
 
-/* Legenda nahoře */
+/* Legenda - zarovnání doprostřed */
+.legend-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
 .legend {
-  width: 95vw;
-  max-width: 480px;
-  margin: 3vw 0 2vw 1vw;
-  background: #fffbe5;
+  background: #fdf6e4;
   border-radius: 16px;
-  box-shadow: 0 3px 12px #a36d3240;
-  padding: 12px 16px;
-  font-size: clamp(1em, 3.7vw, 1.28em);
-  color: #865c22;
-  text-align: left;
-  line-height: 1.55;
-  font-family: 'Segoe UI Emoji', 'Arial', sans-serif;
-}
-.legend b {
-  color: #a36d32;
-  font-size: 1.12em;
-  display: block;
-  margin-bottom: 6px;
-  text-align: left;
+  box-shadow: 0 2px 16px #c8d7e1;
+  padding: 18px 22px 14px 22px;
+  font-size: 1.12rem;
+  color: #9b6a23;
+  max-width: 380px;
 }
 
-/* Wrapper a herní čtverec dole uprostřed */
+/* Čtverec - co největší */
 .game-wrapper {
   width: 100vw;
   display: flex;
@@ -39,83 +33,31 @@ body {
   position: fixed;
   left: 0;
   bottom: 0;
+  margin-bottom: 0;
   z-index: 2;
 }
 
-/* Dřevěný rámeček */
 .board-frame {
-  background: #a36d32;
-  border-radius: 24px;
-  box-shadow: 0 8px 30px #a36d3260;
-  padding: 1vw;
-  box-sizing: border-box;
+  padding: 0; /* zruš padding pro maximum velikosti */
+  width: 100vw;
+  max-width: 100vw;
+  max-height: 100vw;
+  background: #b17a3b;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px #bbcbdb;
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 99vw;
-  max-width: 99vw;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  max-height: 99vw;
-  margin-bottom: 2vw;
+  align-items: center;
 }
 
-/* Herní čtverec - 7x7 grid! */
 .board {
-  width: 97vw;
-  height: 97vw;
-  max-width: 97vw;
-  max-height: 97vw;
-  aspect-ratio: 1 / 1;
-  background: #fff;
-  border-radius: 16px;
+  width: 96vw;
+  height: 96vw;
+  max-width: 96vw;
+  max-height: 96vw;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  gap: 0.5vw;
-  box-shadow: 0 2px 10px #0002;
-  align-items: center;
-  justify-items: center;
-}
-
-/* Jedna dlaždice */
-.tile {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 7vw;
-  box-shadow: 0 2px 8px #0001;
-  transition: background 0.2s, box-shadow 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.tile.flower { background: #ffe0f4; }
-.tile.tree   { background: #d2fadc; }
-.tile.house  { background: #fff4da; }
-.tile.leaf   { background: #e5ffe2; }
-.tile.locked { background: #fff1bb; }
-
-.lock {
-  position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.6em;
-  color: #ffd700;
-  opacity: 0.60;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Lepší vzhled na větších displejích */
-@media (min-width: 700px) {
-  .legend { font-size: 1.18em; max-width: 520px; }
-  .board-frame { padding: 18px; width: 540px; height: 540px; max-height: 540px;}
-  .board { width: 480px; height: 480px; max-width: 480px; max-height: 480px; gap: 12px; }
-  .tile { font-size: 46px; }
-  .lock { font-size: 38px; }
+  gap: 2px;
+  background: none;
 }
