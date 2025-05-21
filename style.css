@@ -37,10 +37,7 @@ h1 {
   font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
   font-weight: normal;
 }
-.legend div {
-  font-size: 2.2em;  /* Zvětši podle potřeby, např. 2.5em nebo víc */
-  line-height: 1.7;
-}
+
 /* Herní plocha */
 .board {
   background: #a87436;
@@ -48,7 +45,6 @@ h1 {
   border-radius: 32px;
   box-shadow: 0 8px 24px #0002;
   margin: 0 auto;
-  /* Opravdu velký obdélník */
   width: 94vw;
   height: 100vh;
   max-width: 99vw;
@@ -69,4 +65,19 @@ h1 {
   .legend {
     max-width: 600px;
   }
+}
+
+/* --- DODÁNO PRO DVĚ SLOUPCE V LEGENDĚ --- */
+.legend-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 36px;        /* mezera mezi sloupci */
+  width: 100%;
+}
+
+.legend-col {
+  text-align: left;
+  font-size: 2.2em;
+  line-height: 1.7;
 }
