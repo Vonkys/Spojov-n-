@@ -61,8 +61,8 @@ h1 {
   width: 94vw;
   max-width: 99vw;
   min-width: 310px;
-  height: 80vh;
-  max-height: 98vh;
+  height: 98vh;
+  max-height: 108vh;
   display: flex;
   align-items: center;
   justify-content: center;
