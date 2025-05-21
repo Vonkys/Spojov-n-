@@ -57,12 +57,12 @@ h1 {
   color: #4a3c23;
   border-radius: 32px;
   box-shadow: 0 8px 24px #0002;
-  margin: 192px auto; /* ještě větší mezera pod legendou */
+  margin: 192px auto; /* větší mezera mezi legendou a polem */
   padding: 24px;
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 sloupců */
   grid-template-rows: repeat(9, 1fr);   /* 9 řádků */
-  gap: 12px;
+  gap: 6px; /* menší mezera mezi buňkami => větší kostičky */
   width: 90vw;
   max-width: 600px;
   aspect-ratio: 6 / 9;
@@ -75,6 +75,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4em;
+  font-size: 2.8em; /* větší obsah buňky */
   transition: 0.2s;
 }
