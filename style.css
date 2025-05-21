@@ -18,78 +18,51 @@ h1 {
   font-weight: normal;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-}
-
 /* Legenda */
-.square.legend {
-  background: #fdf7e6;
+.legend {
+  background: #fffbe8;
   border-radius: 24px;
-  padding: 24px 32px;
-  box-shadow: 0 4px 16px #0002;
-  margin-bottom: 28px;
-  margin-top: 0;
-  min-width: 320px;
-  max-width: 98vw;
-  width: 95vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 8px 24px #0001;
+  max-width: 480px;
+  margin: 0 auto 32px auto;
+  padding: 24px 16px;
+  text-align: center;
 }
 
-.square.legend h2 {
-  font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
+.legend h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
   color: #a87436;
-  font-size: 1.6em;
-  margin: 0 0 18px 0;
+  font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
+  font-weight: normal;
 }
 
-.legend-table {
-  font-size: 2.1em;
-}
-
-/* Herní plocha - hnědý čtverec/obdélník */
-.square.board {
+/* Herní plocha */
+.board {
   background: #a87436;
-  color: #423212;
-  border-radius: 28px;
-  width: 99vw;
+  color: #4a3c23;
+  border-radius: 32px;
+  box-shadow: 0 8px 24px #0002;
+  margin: 0 auto;
+  /* Opravdu velký obdélník */
+  width: 94vw;
+  height: 58vh;
   max-width: 99vw;
-  min-width: 70vw;
-  height: 200vw;      /* Extra vysoký na mobilu */
-  max-height: 300vw;
-  min-height: 90vw;
-  font-size: 2.8em;
+  max-height: 68vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px #0002;
-  margin-top: 24px;
-  margin-bottom: 40px;
-  transition: width 0.2s, height 0.2s;
+  font-size: 2.4em;
+  font-weight: 400;
 }
 
-/* Pro větší displeje (tablety, PC) trochu menší hnědý čtverec */
-@media (min-width: 600px) {
-  .square.board {
-    width: 650px;
-    height: 650px;
-    min-width: 400px;
-    min-height: 400px;
-    font-size: 3em;
+@media (min-width: 700px) {
+  .board {
+    width: 70vw;
+    height: 60vh;
+    font-size: 2.5em;
   }
-  .square.legend {
+  .legend {
     max-width: 600px;
-    width: 540px;
   }
-}
-
-/* Zajistí správné zarovnání obsahu */
-.square.board > * {
-  margin: auto;
-  text-align: center;
 }
