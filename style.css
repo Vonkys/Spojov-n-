@@ -1,104 +1,102 @@
-body {
-  background: #c5eaff;
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 0;
+  background: #c7eafd;
+  box-sizing: border-box;
 }
 
-.container {
+body {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3vw;
   width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
-  justify-content: flex-start;
 }
 
-.hlavni-nadpis {
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: 14vw;
-  text-align: center;
-  color: #996633;
-  margin-bottom: 2vw;
-  margin-top: 5vw;
-  text-shadow: 0 3px 14px #fff8, 0 2px 1px #fff4;
-  letter-spacing: 2px;
-}
-@media (min-width: 700px) {
-  .hlavni-nadpis {
-    font-size: 4.5rem;
-    margin-bottom: 20px;
-    margin-top: 32px;
-  }
-}
-
-.panel {
-  box-shadow: 0 5px 25px #0001;
-  border-radius: 2.5vw;
-  max-width: 94vw;
+.square.legend {
   width: 94vw;
-  margin: 0 auto;
+  max-width: 580px;
+  margin: 4vw auto 2vw auto;
+  background: #fffbe7;
+  border-radius: 2.5vw;
+  box-shadow: 0 5px 24px #b3d2e6bb;
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.legenda {
-  background: #fdf8e6;
-  padding: 3vw 4vw;
-  margin-bottom: 2vw;
-}
-
-.legenda-nadpis {
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: 2.5rem;
-  color: #a87c3f;
-  text-align: center;
-  margin-bottom: 1vw;
-}
-
-.legenda-body {
-  font-size: 2rem;
-  line-height: 2.3rem;
-  text-align: center;
-}
-
-.herni {
-  background: #a87c3f;
-  min-height: 90vw;
-  min-width: 90vw;
-  max-width: 95vw;
-  max-height: 95vw;
-  font-size: 2.8rem;
-  color: #443011;
-  display: flex;
   justify-content: center;
+  padding: 3vw 4vw;
+}
+
+.legend-content {
+  width: 100%;
+  text-align: center;
+}
+
+.legend-content h2 {
+  font-family: 'Pacifico', cursive;
+  color: #a87436;
+  font-size: 7vw;
+  margin: 0 0 2vw 0;
+}
+
+.legend-table {
+  font-size: 4.9vw;
+  margin: 0 auto;
+}
+
+.square.board {
+  flex: 1 1 auto;
+  width: 98vw;
+  max-width: 1000px;
+  margin: 0 auto 3vw auto;
+  background: #a87c3f;
+  border-radius: 2vw;
+  box-shadow: 0 5px 24px #b3d2e6bb;
+  display: flex;
   align-items: center;
-  margin-bottom: 4vw;
+  justify-content: center;
+  min-height: 180px;
+  /* Klíčové: zabírá celý zbytek stránky */
+  height: 100%;
+}
+
+.board-content {
+  width: 100%;
+  text-align: center;
+  font-size: 2.3rem;
+  color: #443011;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 @media (min-width: 700px) {
-  .panel {
-    border-radius: 32px;
-    max-width: 700px;
-    width: 700px;
-  }
-  .legenda {
+  .square.legend {
+    width: 540px;
+    max-width: 580px;
     padding: 32px 36px;
+    border-radius: 32px;
   }
-  .legenda-nadpis {
+  .legend-content h2 {
+    font-size: 2.5rem;
+  }
+  .legend-table {
+    font-size: 1.5rem;
+  }
+  .square.board {
+    width: 700px;
+    max-width: 900px;
+    min-height: 340px;
+    border-radius: 32px;
     font-size: 2.3rem;
-    margin-bottom: 10px;
   }
-  .legenda-body {
-    font-size: 1.7rem;
-  }
-  .herni {
-    min-height: 600px;
-    min-width: 600px;
-    max-width: 700px;
-    max-height: 650px;
-    font-size: 2.7rem;
+  .board-content {
+    font-size: 2rem;
   }
 }
