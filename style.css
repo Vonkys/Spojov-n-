@@ -4,80 +4,77 @@ body {
   font-family: 'Segoe UI', 'Arial', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.legend-container {
-  position: absolute;
-  top: 2vw;
-  left: 2vw;
-  background: #fff9e5;
+/* Legenda nahoře */
+.legend {
+  width: 96vw;
+  max-width: 470px;
+  margin: 4vw auto 2vw auto;
+  background: #fffbe5;
   border-radius: 18px;
-  box-shadow: 0 4px 18px #a36d3244;
-  padding: 2vw 4vw;
-  z-index: 10;
-  font-size: 1.2em;
-  min-width: 220px;
-  max-width: 84vw;
+  box-shadow: 0 3px 16px #a36d3244;
+  padding: 14px 18px;
+  font-size: clamp(1em, 4vw, 1.35em);
+  color: #865c22;
+  text-align: left;
+  line-height: 1.55;
+  font-family: 'Segoe UI Emoji', 'Arial', sans-serif;
 }
-.legend-title {
+.legend b {
   color: #a36d32;
-  font-family: 'Pacifico', cursive;
-  font-size: 1.5em;
-  margin-bottom: 0.7em;
-  font-weight: bold;
+  font-size: 1.15em;
+  display: block;
+  margin-bottom: 6px;
   text-align: left;
 }
-.legend-row {
-  font-size: 1.8em;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-  margin: 0.2em 0;
-}
 
-#game-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 100vh;
+/* Wrapper a herní čtverec vždy dole uprostřed! */
+.game-wrapper {
   width: 100vw;
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 2;
 }
 
+/* Dřevěný rámeček */
 .board-frame {
   background: #a36d32;
-  border-radius: 24px;
+  border-radius: 28px;
   box-shadow: 0 8px 30px #a36d3260;
   padding: 2vw;
   box-sizing: border-box;
-  max-width: 98vw;
-  max-height: 98vw;
-  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
+  width: min(96vw, 96vh - 20vw, 540px);
+  height: min(96vw, 96vh - 20vw, 540px);
 }
 
+/* Herní čtverec */
 .board {
-  width: 92vw;
-  height: 92vw;
-  max-width: 92vw;
-  max-height: 92vw;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
+  background: #fff;
+  border-radius: 16px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  gap: 1vw;
-  background: #fff8;
-  border-radius: 16px;
+  gap: min(1vw, 7px);
   box-shadow: 0 2px 10px #0002;
   align-items: center;
   justify-items: center;
 }
 
+/* Jedna dlaždice */
 .cell {
   width: 100%;
   height: 100%;
@@ -86,12 +83,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5em;
+  font-size: clamp(2.1rem, 7vw, 3.4rem);
   box-shadow: 0 2px 8px #0001;
   transition: background 0.2s, box-shadow 0.2s;
 }
 
-/* Barevné pozadí buněk podle typu */
+/* Barvy podle typu (přidávej třídy v JS) */
 .cell.type-flower { background: #ffe0f4; }
 .cell.type-tree   { background: #d2fadc; }
 .cell.type-house  { background: #fff4da; }
@@ -99,7 +96,6 @@ body {
 
 .locked {
   position: relative;
-  opacity: 1 !important;
 }
 .locked .lock-icon {
   position: absolute;
@@ -113,9 +109,9 @@ body {
   pointer-events: none;
 }
 
+/* Lepší vzhled na větších displejích */
 @media (min-width: 700px) {
-  .legend-container { font-size: 1.3em; min-width: 250px; max-width: 430px; }
-  .legend-row { font-size: 2.3em; }
-  .board-frame { padding: 16px; }
-  .board { width: 500px; height: 500px; max-width: 500px; max-height: 500px; }
+  .legend { font-size: 1.2em; max-width: 520px; }
+  .board-frame { padding: 20px; width: 540px; height: 540px; }
+  .board { gap: 8px; }
 }
