@@ -1,0 +1,76 @@
+body {
+  background: #bbe6fb;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+.square {
+  width: 90vw;
+  max-width: 98vw;
+  height: 40vh;
+  max-height: 44vw;
+  min-height: 260px;
+  min-width: 260px;
+  background: #fffbe6;
+  border-radius: 2.2vw;
+  box-shadow: 0 4px 32px #0001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.square.legend {
+  background: #fffbe6;
+}
+
+.square.board {
+  background: #a87436;
+}
+
+.legend-content {
+  width: 90%;
+  text-align: center;
+  font-size: 2.8vw;
+}
+
+.legend-content h2 {
+  font-family: 'Pacifico', cursive;
+  color: #a87436;
+  font-size: 6vw;
+  margin-top: 0;
+  margin-bottom: 2vw;
+}
+
+.legend-table {
+  font-size: 4vw;
+}
+
+@media (max-width: 600px) {
+  .square {
+    width: 96vw;
+    height: 44vw;
+    min-height: 160px;
+    min-width: 160px;
+  }
+  .legend-content h2 {
+    font-size: 6vw;
+  }
+  .legend-table {
+    font-size: 5vw;
+  }
+}
