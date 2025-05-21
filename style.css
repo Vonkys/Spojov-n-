@@ -33,13 +33,12 @@ h1 {
   margin: 0 0 10px 0;
   font-size: 1.4em;
   color: #a87436;
-  font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
+  font-family: 'Pacifico', cursive;
   font-weight: normal;
 }
 
 .legend-grid {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: 36px;
   width: 100%;
@@ -60,9 +59,9 @@ h1 {
   margin: 0 auto 36px auto;
   width: 94vw;
   max-width: 99vw;
-  min-width: 310px;
-  height: 98vh;
-  max-height: 108vh;
+  min-width: 320px;
+  height: 85vh;
+  max-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,8 +70,8 @@ h1 {
 
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   gap: 1vw;
   width: 100%;
   height: 100%;
@@ -84,7 +83,6 @@ h1 {
   box-shadow: 0 2px 8px #0001;
   width: 100%;
   height: 100%;
-  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,12 +94,9 @@ h1 {
 }
 
 @media (min-width: 700px) {
-  .legend {
-    max-width: 600px;
-  }
   .board {
-    width: 580px;
-    height: 900px;
+    width: 640px;
+    height: 880px;
     max-width: 900px;
     max-height: 900px;
     padding: 16px;
