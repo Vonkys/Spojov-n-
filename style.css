@@ -1,0 +1,83 @@
+body {
+  background: #bbe6fb;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2vw; /* malá mezera */
+  box-sizing: border-box;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+}
+
+.square {
+  flex: 0 0 auto;
+  width: 98vw;
+  height: 38vw;
+  max-width: 99vw;
+  max-height: 46vw;
+  min-height: 32vw;
+  min-width: 32vw;
+  border-radius: 2vw;
+  box-shadow: 0 4px 32px #0001;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.square.legend {
+  background: #fffbe6;
+}
+
+.square.board {
+  background: #a87436;
+}
+
+.legend-content {
+  width: 95%;
+  text-align: center;
+}
+
+.legend-content h2 {
+  font-family: 'Pacifico', cursive;
+  color: #a87436;
+  font-size: 7vw;
+  margin: 0 0 2vw 0;
+}
+
+.legend-table {
+  font-size: 5vw;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    gap: 2vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+  .square {
+    width: 99vw;
+    height: 38vw;
+    min-height: 33vw;
+    min-width: 33vw;
+    max-width: 99vw;
+    max-height: 45vw;
+  }
+  .legend-content h2 {
+    font-size: 8vw;
+  }
+  .legend-table {
+    font-size: 6vw;
+  }
+}
