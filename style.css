@@ -37,7 +37,10 @@ h1 {
   font-family: 'Pacifico', cursive, 'Segoe Script', 'Segoe UI', 'Arial', sans-serif;
   font-weight: normal;
 }
-
+.legend div {
+  font-size: 2.2em;  /* Zvětši podle potřeby, např. 2.5em nebo víc */
+  line-height: 1.7;
+}
 /* Herní plocha */
 .board {
   background: #a87436;
