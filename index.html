@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tripple – match</title>
+  <title>Tripple – mise</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -18,8 +18,24 @@
       font-family: 'Pacifico', cursive;
       color: #a87436;
       margin-top: 24px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-size: 3.2em;
+    }
+
+    .mission {
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #a87436;
+      margin-bottom: 12px;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 1.2em;
+      color: green;
+      height: 1.4em;
+      margin-bottom: 6px;
     }
 
     .legend-wrapper {
@@ -94,6 +110,9 @@
 <body>
   <h1>Tripple – match</h1>
 
+  <div class="mission" id="missionText">Načítání mise...</div>
+  <div class="message" id="message"></div>
+
   <div class="legend-wrapper">
     <div class="legend">
       <h2>Legenda spojování:</h2>
@@ -111,13 +130,37 @@
 
   <script>
     const board = document.getElementById('board');
+    const missionText = document.getElementById('missionText');
+    const message = document.getElementById('message');
+
     const ROWS = 12;
     const COLS = 6;
     const TOTAL_CELLS = ROWS * COLS;
-    const LEVELS = ['🌱', '🌿', '🌳', '🏡', '🏠', '🏛️', '🏯', '🏢', '🏙️', '👑', '✨'];
+    const LEVELS = ['🌱', '🌿', '🌳', '🏡', '🏠', '🏛️', '🏯', '🏢', '🏙️', '👑'];
 
     let cells = [];
     let selectedIndex = null;
+
+    let currentMission = null;
+
+    function generateMission() {
+      const level = LEVELS[Math.floor(Math.random() * LEVELS.length)];
+      const count = Math.floor(Math.random() * 3) + 2; // 2–4x
+      currentMission = { level, count };
+      missionText.textContent = `Mise: Získej ${count}× ${level}`;
+      message.textContent = '';
+    }
+
+    function checkMission() {
+      if (!currentMission) return;
+      const currentCount = cells.filter(c => c.textContent === currentMission.level).length;
+      if (currentCount >= currentMission.count) {
+        message.textContent = 'Mise splněna!';
+        setTimeout(() => {
+          generateMission();
+        }, 1200);
+      }
+    }
 
     for (let i = 0; i < TOTAL_CELLS; i++) {
       const cell = document.createElement('div');
@@ -148,6 +191,7 @@
           if (levelIndex !== -1 && levelIndex + 1 < LEVELS.length) {
             to.textContent = LEVELS[levelIndex + 1];
             from.textContent = '';
+            checkMission();
           }
         }
 
@@ -167,7 +211,10 @@
       if (freeCells.length === 0) return;
       const randomCell = freeCells[Math.floor(Math.random() * freeCells.length)];
       randomCell.textContent = '🌱';
+      checkMission();
     });
+
+    generateMission();
   </script>
 </body>
 </html>
