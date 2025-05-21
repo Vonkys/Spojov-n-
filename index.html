@@ -24,7 +24,7 @@
 
     .mission {
       text-align: center;
-      font-size: 1.4em;
+      font-size: 2em;
       font-weight: bold;
       color: #a87436;
       margin-bottom: 12px;
@@ -140,7 +140,6 @@
 
     let cells = [];
     let selectedIndex = null;
-
     let currentMission = null;
 
     function generateMission() {
@@ -156,9 +155,7 @@
       const currentCount = cells.filter(c => c.textContent === currentMission.level).length;
       if (currentCount >= currentMission.count) {
         message.textContent = 'Mise splněna!';
-        setTimeout(() => {
-          generateMission();
-        }, 1200);
+        setTimeout(() => generateMission(), 1200);
       }
     }
 
