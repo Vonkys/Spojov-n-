@@ -1,84 +1,103 @@
 body {
-  background: #bfe6fa;
+  background: #c5eaff;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3vw;
+  width: 100vw;
   min-height: 100vh;
-  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.hlavni-nadpis {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 10vw;
+  text-align: center;
+  color: #996633;
+  margin-bottom: 2vw;
+  margin-top: 5vw;
+  text-shadow: 0 3px 14px #fff8, 0 2px 1px #fff4;
+  letter-spacing: 2px;
+}
+@media (min-width: 700px) {
+  .hlavni-nadpis {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    margin-top: 32px;
+  }
 }
 
 .panel {
-  border-radius: 32px;
-  box-shadow: 0 6px 24px #0002;
-  margin: 0 auto 2vw auto;
+  box-shadow: 0 5px 25px #0001;
+  border-radius: 2.5vw;
+  max-width: 94vw;
+  width: 94vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .legenda {
-  width: 72vw;    /* zmenšeno (bylo 95vw) */
-  max-width: 750px;
-  background: #fffbe7;
-  margin-bottom: 3vw;
-  padding: 1vw 2vw;
+  background: #fdf8e6;
+  padding: 3vw 4vw;
+  margin-bottom: 2vw;
 }
 
-.legenda-title {
+.legenda-nadpis {
   font-family: 'Caveat', cursive, sans-serif;
-  font-size: 7vw;
-  color: #996633;
+  font-size: 2.5rem;
+  color: #a87c3f;
+  text-align: center;
   margin-bottom: 1vw;
 }
 
-.legenda-obsah {
-  font-size: 5vw;
+.legenda-body {
+  font-size: 2rem;
+  line-height: 2.3rem;
   text-align: center;
 }
 
 .herni {
-  width: 100vw;     /* větší než horní (bylo 95vw) */
-  max-width: 98vw;
-  aspect-ratio: 1/1;
-  background: #aa7832;
-  color: #47341c;
-  font-size: 7vw;
+  background: #a87c3f;
+  min-height: 48vw;
+  min-width: 94vw;
+  max-width: 94vw;
+  max-height: 64vw;
+  font-size: 2.6rem;
+  color: #443011;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Spodní panel ještě větší o 25% */
-@media (max-width: 699px) {
-  .herni {
-    width: 118vw;
-    max-width: 118vw;
-  }
-}
-
-/* Responsivita pro větší obrazovky */
 @media (min-width: 700px) {
-  .legenda {
-    width: 520px;
+  .panel {
+    border-radius: 32px;
     max-width: 550px;
-    font-size: 2.1rem;
+    width: 550px;
   }
-  .legenda-title, .herni {
-    font-size: 2.7rem;
+  .legenda {
+    padding: 32px 36px;
   }
-  .legenda-obsah {
-    font-size: 2rem;
+  .legenda-nadpis {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
+  .legenda-body {
+    font-size: 1.7rem;
   }
   .herni {
-    width: 940px;
-    max-width: 98vw;
-    font-size: 2.6rem;
+    min-height: 340px;
+    min-width: 550px;
+    max-width: 550px;
+    max-height: 480px;
+    font-size: 2.7rem;
   }
 }
