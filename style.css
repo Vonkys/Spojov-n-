@@ -1,112 +1,86 @@
 body {
-  background: #bbe6fb;
-  min-height: 100vh;
+  background: #c3e6fa;
   margin: 0;
-  padding: 0;
-}
-
-.main-container {
-  width: 100vw;
+  font-family: 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 2vw; /* malá mezera */
-  box-sizing: border-box;
-  padding-top: 4vw;
-  padding-bottom: 4vw;
-}
-
-/* Společné pro oba panely */
-.square {
-  flex: 0 0 auto;
-  margin: 0 auto;
-  display: flex;
   align-items: center;
+}
+
+/* Nadpis */
+.main-title {
+  text-align: center;
+  font-size: 2.6em;
+  margin-top: 2vw;
+  color: #a87436;
+  font-family: 'Brush Script MT', cursive, 'Segoe Script', sans-serif;
+  letter-spacing: 0.04em;
+  margin-bottom: 1vw;
+}
+
+.square {
+  border-radius: 2em;
+  box-shadow: 0 8px 24px #0001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3vw;
   justify-content: center;
-  box-sizing: border-box;
-  border-radius: 2vw;
-  box-shadow: 0 4px 32px #0001;
 }
 
-/* Legenda zůstává jako byla */
-.square.legend {
-  width: 92vw;
-  max-width: 560px;
-  min-height: 32vw;
-  background: #fffbe6;
-  height: 38vw;
-  max-height: 46vw;
-  min-width: 32vw;
-  margin-bottom: 2vw;
-}
-
-/* Herní plocha opravdu OBR široká a vysoká! */
-.square.board {
-  width: 99vw;
-  max-width: 99vw;
-  min-width: 60vw;
-  min-height: 55vw;
-  height: 68vw;
-  max-height: 99vw;
-  background: #a87436;
+.legend {
+  background: #fcf8e3;
+  width: 85vw;
+  max-width: 550px;
+  padding: 2vw 0 2vw 0;
   margin-bottom: 3vw;
 }
 
-/* Obsah legendy */
-.legend-content {
-  width: 95%;
-  text-align: center;
-}
-.legend-content h2 {
-  font-family: 'Pacifico', cursive;
+.legend-title {
+  font-size: 2em;
+  font-family: 'Brush Script MT', cursive, 'Segoe Script', sans-serif;
   color: #a87436;
-  font-size: 7vw;
-  margin: 0 0 2vw 0;
-}
-.legend-table {
-  font-size: 5vw;
-  margin: 0 auto;
-}
-
-/* Obsah herní plochy */
-.board-content {
-  font-size: 2.6rem;
-  color: #443011;
+  margin-bottom: 1vw;
   text-align: center;
-  width: 100%;
 }
 
-@media (min-width: 700px) {
-  .main-container {
-    gap: 2vw;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
-  }
+.legend-list {
+  font-size: 1.7em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+/* Hnědý herní panel */
+.square.board {
+  background: #a87436;
+  color: #423212;
+  width: 98vw;
+  max-width: 99vw;
+  min-width: 60vw;
+  height: 100vw;      /* Vysoký jako je šířka viewportu */
+  max-height: 180vw;  /* když je hodně široko */
+  min-height: 70vw;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-text {
+  font-size: 2em;
+  color: #423212;
+}
+
+@media (min-width: 600px) {
   .square.legend {
-    width: 540px;
-    max-width: 580px;
-    min-width: 340px;
-    height: 190px;
-    max-height: 250px;
-    margin-bottom: 32px;
-  }
-  .legend-content h2 {
-    font-size: 2.4rem;
-  }
-  .legend-table {
-    font-size: 1.45rem;
+    width: 450px;
+    max-width: 600px;
   }
   .square.board {
-    width: 98vw;
-    max-width: 900px;
-    min-width: 500px;
-    height: 480px;
-    max-height: 680px;
-    min-height: 340px;
-  }
-  .board-content {
-    font-size: 2rem;
+    width: 600px;
+    height: 600px;
+    min-height: 400px;
+    max-height: 85vh;
   }
 }
