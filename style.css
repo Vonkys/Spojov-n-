@@ -60,12 +60,12 @@ h1 {
   margin: 24px auto;
   padding: 24px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 sloupce */
-  grid-template-rows: repeat(7, 1fr);   /* 7 řádků */
+  grid-template-columns: repeat(6, 1fr); /* 6 sloupců */
+  grid-template-rows: repeat(9, 1fr);   /* 9 řádků */
   gap: 12px;
   width: 90vw;
-  max-width: 480px;
-  aspect-ratio: 4 / 7;
+  max-width: 600px;
+  aspect-ratio: 6 / 9;
 }
 
 .board .cell {
