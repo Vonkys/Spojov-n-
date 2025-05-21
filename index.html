@@ -61,7 +61,7 @@
       padding: 24px;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(12, 1fr); /* 12 řádků */
+      grid-template-rows: repeat(12, 1fr);
       gap: 6px;
       width: 90vw;
       max-width: 600px;
@@ -86,7 +86,8 @@
     }
 
     .selected {
-      outline: 3px solid #009688;
+      outline: 4px solid #ff9800;
+      box-shadow: 0 0 12px #ff9800;
     }
   </style>
 </head>
@@ -128,7 +129,6 @@
 
     function handleCellClick(index) {
       const cell = cells[index];
-
       if (index === generatorIndex) return;
 
       if (selectedIndex === null) {
