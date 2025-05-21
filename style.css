@@ -37,12 +37,17 @@ h1 {
   font-weight: normal;
 }
 
-.legend div {
+.legend > div {
   font-size: 1.6em;
   line-height: 1.5;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 sloupce */
+  grid-template-columns: repeat(2, 1fr);
   gap: 4px 32px;
+  justify-content: center;
+}
+
+.legend > div > div {
+  display: flex;
   justify-content: center;
 }
 
