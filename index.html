@@ -1,63 +1,38 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tripple – match</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 </head>
 <body>
   <h1>Tripple – match</h1>
+
   <div class="legend">
     <h2>Legenda spojování:</h2>
-    <div class="legend-grid">
-      <div class="legend-col">
-        🌱 + 🌱 → 🌿<br>
-        🌿 + 🌿 → 🌳<br>
-        🌳 + 🌳 → 🏡<br>
-        🏡 + 🏡 → 🏠<br>
-        🏠 + 🏠 → 🏛️<br>
-      </div>
-      <div class="legend-col">
-        🏛️ + 🏛️ → 🏯<br>
-        🏯 + 🏯 → 🏢<br>
-        🏢 + 🏢 → 🏙️<br>
-        🏙️ + 🏙️ → 👑
-      </div>
+    <div>
+      🌱 + 🌱 → 🌿<br>
+      🌿 + 🌿 → 🌳<br>
+      🌳 + 🌳 → 🏡<br>
+      🏡 + 🏡 → 🏠<br>
+      🏠 + 🏠 → 🏛️<br>
+      🏛️ + 🏛️ → 🏯<br>
+      🏯 + 🏯 → 🏢<br>
+      🏢 + 🏢 → 🏙️<br>
+      🏙️ + 🏙️ → 👑<br>
+      👑 + 👑 → ✨
     </div>
   </div>
+
   <div class="board">
-    <div class="board-grid">
-      <!-- 6 sloupců × 8 řádků = 48 buněk -->
-      <!-- můžeš přidat obsah do každé buňky -->
-      <!-- buňky generované ručně, lze nahradit JS cyklem -->
-      <!-- 48x .cell -->
-      <!-- řádek 1 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 2 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 3 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 4 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 5 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 6 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 7 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <!-- řádek 8 -->
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-      <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    </div>
+    <!-- 8 sloupců × 10 řádků = 80 buněk -->
+    <!-- Můžeš nechat JS vygenerovat dynamicky později -->
+    <!-- Ukázka několika buněk -->
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <!-- ... opakuj 80x, nebo použij script -->
   </div>
 </body>
 </html>
