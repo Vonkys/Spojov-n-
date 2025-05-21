@@ -7,18 +7,15 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   min-height: 100vh;
   justify-content: center;
 }
 
 .panel {
-  width: 95vw;              /* bylo 100vw, nyní více k okraji ale s menším odsazením */
-  max-width: 95vw;
-  aspect-ratio: 1/1;
-  border-radius: 32px;      /* větší zaoblení pro větší čtverec */
+  border-radius: 32px;
   box-shadow: 0 6px 24px #0002;
-  margin: 0 auto;
+  margin: 0 auto 2vw auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,39 +24,61 @@ body {
 }
 
 .legenda {
+  width: 72vw;    /* zmenšeno (bylo 95vw) */
+  max-width: 750px;
   background: #fffbe7;
-  margin-bottom: 2vw;       /* trošku větší mezera mezi čtverci */
+  margin-bottom: 3vw;
+  padding: 1vw 2vw;
 }
 
 .legenda-title {
   font-family: 'Caveat', cursive, sans-serif;
-  font-size: 8vw;           /* zvětšeno */
+  font-size: 7vw;
   color: #996633;
   margin-bottom: 1vw;
 }
 
 .legenda-obsah {
-  font-size: 6vw;           /* zvětšeno */
+  font-size: 5vw;
   text-align: center;
 }
 
 .herni {
+  width: 100vw;     /* větší než horní (bylo 95vw) */
+  max-width: 98vw;
+  aspect-ratio: 1/1;
   background: #aa7832;
   color: #47341c;
-  font-size: 8vw;           /* zvětšeno */
+  font-size: 7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spodní panel ještě větší o 25% */
+@media (max-width: 699px) {
+  .herni {
+    width: 118vw;
+    max-width: 118vw;
+  }
 }
 
 /* Responsivita pro větší obrazovky */
 @media (min-width: 700px) {
-  .panel {
-    width: 750px;
-    max-width: 96vw;
-    font-size: 2.5rem;
+  .legenda {
+    width: 520px;
+    max-width: 550px;
+    font-size: 2.1rem;
   }
   .legenda-title, .herni {
-    font-size: 2.8rem;
+    font-size: 2.7rem;
   }
   .legenda-obsah {
-    font-size: 2.1rem;
+    font-size: 2rem;
+  }
+  .herni {
+    width: 940px;
+    max-width: 98vw;
+    font-size: 2.6rem;
   }
 }
